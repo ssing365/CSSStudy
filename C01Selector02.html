@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>속성 셀렉터</h2>
+    <style>
+        /*
+        8. 속성 선택자 : 해당 속성이 정의된 태그를 선택한다.
+        속성명만 기술하거나, 속성과 속성값을 동시에 기술할 수 있다.
+        값 지정시 "더블, '싱글 쿼테이션으로 감싸거나 생략도 가능하다.
+        */
+        input[type='text']{
+            color : red;
+        }
+        input[type='tel']{
+            border: none;
+            border-bottom: 2px solid gray;
+            border-right: 5px solid purple;
+        }
+        input[type=password]{
+            background-color: yellow;
+        }
+    </style>
+    <form action="">
+        이름 : <input type="text" name="" id=""> <br>
+        아이디 : <input type="text" name="" id=""> <br>
+        비밀번호 : <input type="password" name="" id=""> <br>
+        전화번호 : <input type="tel" name="" id=""> <br>
+    </form>
+
+    <h2>정규 표현식으로 사용한 셀렉터</h2>
+    <style>
+        /*
+        9. 정규표현식 : 셀렉터 속성에 정규표현식을 사용할 수 있다.
+         * : 문자열이 포함되었을때 선택
+         $ : 끝날 때
+         ^ : 시작될 때
+         = : 같을 때 엘리먼트를 선택한다.
+        */
+        a[href*=da]{
+            color : #ff6699; font-size: 20px; font-weight: bold;
+        }
+        a[href$=com]{
+            border : 5px green dotted
+        }
+        a[href^=http]{
+            font-size: 30px;
+        }
+        a[href="www.nate.com"]{
+            background-color: yellow;
+        }
+    </style>
+
+    <a href="http://www.naver.com">네이버</a>
+    <br>
+    <a href="http://www.daum.net">다음</a>
+    <br>
+    <a href="http://www.nate.com">네이트</a>
+
+    <style>
+        /*
+        10. 동위선택자 : 같은 수준의 태그를 선택하거나 바로 아래의 태그를 선택한다.
+        ~ : 같은 수준의 태그 전체 선택
+        + : 같은 수준의 태그 중 다음 하나만 선택
+        */
+
+        /*
+        h2와 동위(같은 수준)에 있는 모든 div를 선택한다.
+        */
+        h2~div{
+            color: blue;
+        }
+        /* h2 태그와 동위에 있는 div태그 중 첫번쨈나 선택한다.
+        즉 div1만 선택해서 빨간색을 적용한다.*/
+        h2+div{
+            color: red; font-weight: bold; background-color: green;
+        }
+    </style>
+
+    <h2 id="title">동위(~,+) 셀렉터</h2>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+
+</body>
+</html>

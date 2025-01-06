@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        background-color: yellow;
+        line-height: 100px;
+        border: 3px solid gray;
+      }
+      .c1 {
+        background-color: red;
+      }
+
+      .c2 {
+        background-color: green;
+      }
+      .c3 {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Animations : 애니메이션</h2>
+    <h3>@keyframes 1</h3>
+    <style>
+        /*
+        @keyframes를 이용한 애니메이션 : from, to를 이용해서 시작과 종료 상태 표현 가능
+        더 상세한 상태를 지정하고 싶다면 %단위를 이용한다.
+        */
+      div.box01 {
+        animation-name: ani1;
+        animation-duration: 4s;
+      }
+      @keyframes ani1 {
+        from {
+          background-color: red;
+        }
+        to {
+          background-color: yellow;
+        }
+      }
+    </style>
+    <div class="box01 c1">box01</div>
+
+    <h3>@keyframes2</h3>
+    <style>
+      div.box02 {
+        position: relative;
+        animation-name: ani2;
+        animation-duration: 4s;
+        animation-iteration-count: 2;
+        animation-direction: alternate;
+        margin-bottom: 100px;
+      }
+      @keyframes ani2 {
+        0% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          background-color: yellow;
+          left: 100px;
+          top: 0px;
+        }
+        50% {
+          background-color: blue;
+          left: 100px;
+          top: 100px;
+        }
+        75% {
+          background-color: green;
+          left: 0px;
+          top: 100px;
+        }
+        100% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+      }
+    </style>
+    <div class="box02 c2">box2</div>
+
+    <h3>@keyframes 3</h3>
+    <style>
+      div.circle {
+        border-radius: 50px;
+        position: relative;
+        animation-duration: 4s;
+        animation-name: ani3;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+      }
+      div.circle:hover {
+        animation-play-state: paused;
+      }
+      @keyframes ani3 {
+        from {
+          left: 0;
+          width: 100px;
+          height: 100px;
+          line-height: 100px;
+          border-radius: 50px;
+          transform: rotate(0deg);
+          font-size: 1.5em;
+        }
+        to {
+          left: 400px;
+          width: 200px;
+          height: 200px;
+          line-height: 200px;
+          border-radius: 100px;
+          transform: rotate(180deg);
+          font-size: 2.5em;
+          background-color: blueviolet;
+        }
+      }
+    </style>
+    <div class="circle c3">circle</div>
+  </body>
+</html>

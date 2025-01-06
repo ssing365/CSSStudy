@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        @import
+         : <link>태그 대체 가능
+        style태그 안에서 최상단에 선언해야한다
+        css파일에 오류가 있으면 다운로드하지 않는다.
+        */
+        @import url('./style/import.css');
+        .content{
+            background-color: black; color: red;
+        }
+
+        /*
+        해당 웹페이지를 디바이스 종류에 따라 각각 다르게 화면을 구성할 수 있도록 해준다.
+        스크린(모니터)용과 프린터(출력)용으로 구분 가능
+        */
+        @media screen {
+            /* 모니터에서는 검은 배경에 흰 글씨로 표현 */
+            .content{
+                background-color: black; color: white;
+            }
+        }
+
+        @media print{
+            /* 프린트할 때는 빨간 바탕에 노란 글씨로 표현 */
+            .content{
+                background-color: red; color: yellow;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>media 속성</h2>
+    <div class="content">
+        <p>
+            <h3>‘마가노믹스’ 핵심은 세 가지예요</h3>
+            오는 20일 취임할 트럼프 행정부 2기 경제정책에 마가노믹스(Maganomics)라는 이름이 붙었어요.
+            ‘미국을 다시 위대하게(Make America Great Again)’라는 트럼프 캠프의 선거 카피에서 따왔어요.
+            마가노믹스의 핵심 포인트는 세 가지예요. 
+            기업들의 세금을 파격적으로 줄이는 감세 정책과 
+            미국이 수입하는 각국 물품에 매기는 관세를 크게 올리는 관세 증세 정책, 
+            그리고 이민자 유입을 줄이는 이민 축소 정책입니다.
+        </p>
+    </div>
+    
+</body>
+</html>

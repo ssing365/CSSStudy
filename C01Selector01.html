@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 
+    Selector(선택자)
+    1. 전체선택자 : 해당 문서 저넻의 글꼴이나 여백을 지정할 때 사용
+    *는 HTML 문서 전체를 가리키는 셀렉터이다. body태그 선택자와 유사
+    -->
+    <style>
+      * {
+        margin: 15px;
+        font-family: Verdana;
+      }
+    </style>
+  </head>
+
+  <body>
+    <style>
+      /*
+      2. 태그 선택자
+          : 태그명과 동일한 이름을 사용하여 문서 내의 모든 태그를 한꺼번에 선택
+          태그명 앞에 특수기호가 사용되지 않음
+      */
+
+      mark {
+        background-color: aquamarine;
+      }
+      hr {
+        height: 3px;
+        background-color: blueviolet;
+      }
+    </style>
+    <h2>태그 셀렉터</h2>
+    수평선은 <mark>hr</mark>태그를 사용합니다.
+    <hr />
+
+    <style>
+      /*
+      3. 클래스 선택자
+        : class속성으로 선택 가능한 셀렉터로 문서 내에서 중복으로 사용할 수 있다.
+        여러 개의 엘리먼트에 동일한 스타일을 적용할 수 있어 주로 li, td 같은 태그에 사용된다.
+      */
+      .positive {
+        font-weight: bold;
+        background-color: yellow;
+      }
+      .nagative {
+        color: silver;
+        font-size: 12px;
+      }
+    </style>
+    <h2>클래스 셀렉터</h2>
+    <div>
+      저의 <span class="positive">장점</span>은
+      <span class="positive">긍정적인 성격</span>입니다.
+      <br />
+      저의 <span class="nagative">단점</span>은
+      <span class="nagative">지저분한 스타일</span>입니다.
+    </div>
+
+    <hr id="mine" />
+    <style>
+      /*
+      4. 아이디 선택자 : 아이디 속성으로 선택 가능하며 #을 사용한다.
+        사용법은 클래스선택자와 동일하지만 아이디는 문서내에서 하나만 사용해야한다.*/
+      #basketball {
+        color: skyblue;
+        font-size: 20px;
+      }
+      #pingpong {
+        color: blueviolet;
+        font-size: 12px;
+      }
+    </style>
+    <h2>아이디 셀렉터</h2>
+    <ul>
+      <li>축구</li>
+      <li id="basketball">농구</li>
+      <li>야구</li>
+      <li id="pingpong">탁구</li>
+      <li>배구</li>
+    </ul>
+
+    <hr id="mine" />
+    <style>
+      /*
+      5. 하위선택자 : 스페이스로 구분하여 항목을 선택.
+        특정 태그 하위의 모든 엘리먼트를 선택한다.
+        table의 경우 tr, td 모두를 선택한다.
+      
+      6. 자식선택자 : >(꺽새괄호)로 구분해서 항목을 선택.
+        하위에 있는 태그 중 1단계 하위태그, 즉 자식 엘리먼트만 선택한다. 
+        table의 경우 tr만 선택한다.
+      */
+
+      /* 하위 선택자이므로 A,B,C 엘리먼트 모두 선택됨*/
+      .myDiv span {
+        color: red;
+        font-size: 24px;
+      }
+      /* 자식 선택자이므로 A, C엘리먼트가 선택됨*/
+      .myDiv > span {
+        color: blue;
+        font-size: 14px;
+      }
+
+      /*
+      선택자를 기술할 때 아래와 같이 공백 하나 차이로 선택되는 엘리먼트가 달라진다.
+      스페이스가 없는 경우에는 span태그중에 myclass라는 클래스 속성이 부여된 엘리먼트를 선택한다.
+      공백이 없는 경우에는 하위선택자이므로 하위의 모든 엘리먼트를 선택한다.
+      */
+      span.myclass {
+        background-color: blueviolet;
+        color: white;
+      }
+      span .myclass {
+        background-color: black;
+        color: yellow;
+      }
+
+      hr#mine {
+        background-color: black;
+        
+      }
+    </style>
+    <h2>하위 셀렉터 및 자식 셀렉터</h2>
+    <div class="myDiv">
+      <span>A. myDiv의 하위 태그 & 자식태그</span>
+      <fieldset>
+        <span>B. myDiv의 하위 태그</span>
+      </fieldset>
+      <span class="myclass">C. 클래스를 부여한 span태그 </span>
+    </div>
+
+    <hr id="mine" />
+    <style>
+      .multi h2,
+      .multi h3,
+      .multi h4 {
+        color: blue;
+      }
+    </style>
+    <h2>다중 셀렉터</h2>
+    <div class="multi">
+      <h2>제목1</h2>
+      <h2>제목2</h2>
+      <h2>제목3</h2>
+      <h2>제목4</h2>
+    </div>
+  </body>
+</html>

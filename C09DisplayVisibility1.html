@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset div{
+            width: 100px; height: 100px;
+            text-align: center; line-height: 100px;
+        }
+        .div1 {background-color: red;}
+        .div2 {background-color: blue;}
+        .div3 {background-color: green;}
+    </style>
+</head>
+<body>
+    <h2>display vs Visibility 속성</h2>
+    <script>
+        function visibilityTest(){
+            console.log("클릭 됨?")
+            let a =document.getElementById("viBox");
+            if(a.style.visibility == 'hidden'){
+                a.style.visibility = 'visible';
+            }else{
+                a.style.visibility = 'hidden';
+            }
+        }
+    </script>
+    <fieldset>
+        <legend>visibility속성</legend>
+        <div class="div1">left</div>
+        <div class="div2" id="viBox" style="visibility: hidden;">center</div>
+        <div class="div3" onclick="visibilityTest();" 
+        style="cursor: pointer;">right(click)</div>
+    </fieldset>
+
+    <script>
+        function displayTest(){
+            console.log("클릭되나요ㅕ?");
+            const a = document.getElementById("disBox");
+            if(a.style.display == 'none'){
+                a.style.display = 'block'
+            }else{
+                a.style.display='none';
+            }
+        }
+    </script>
+
+    <fieldset>
+        <legend>Display속성</legend>
+        <div class="div1">left</div>
+        <div class="div2" id="disBox" style="display:none;">center</div>
+        <div class="div3" onclick="displayTest();" 
+        style="cursor: pointer;">right(click)</div>
+    </fieldset>
+
+    <fieldset>
+        <legend>HTML5의 hidden속성</legend>
+        <div class="div1">left</div>
+        <div class="div2" hidden>ceneter</div>
+        <div class="div3">right</div>
+    </fieldset>
+    
+</body>
+</html>

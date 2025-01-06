@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px; height: 100px; text-align: center;
+            line-height: 100px; transition-duration:2s;
+        }
+        .c1{background-color: red;}
+        .c2{background-color: green;}
+        .c3{background-color: blue;}
+    </style>
+    <style>
+        div.trans1:hover{
+            background-color: red;
+            opacity: 0.4;   
+            transform: translateX(400px)
+            rotate(90deg)
+            scaleX(0.1);
+
+        }
+        div.trans2:hover{
+            background-color: green;
+            transform: translate(400px, 100px) scale(1.5, 1.5) rotate(-180deg);
+        }
+        div.trans3:hover{
+            transform: rotateX(360deg);
+            transform: rotateY(360deg);
+            transform: rotateZ(360deg);
+            /* rotate3d(x,y,z,angle) */
+            transform: rotate3d(1,1,1,90deg);
+        }
+    </style>
+</head>
+<body>
+    <h2>Transform(변형3)</h2>
+
+    <div class="trans1 c1">box01</div>
+    <div class="trans2 c2">box02</div>
+    <div class="trans3 c3">box03</div>
+    
+</body>
+</html>

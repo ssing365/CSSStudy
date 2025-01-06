@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        background-color: yellow;
+        line-height: 100px;
+        border: 3px solid gray;
+      }
+      .c1 {
+        background-color: red;
+      }
+      .c2 {
+        background-color: green;
+      }
+      .c3 {
+        background-color: blue;
+      }
+    </style>
+    <style>
+      .rect1,
+      .rect2 {
+        transition-property: background-color, width, height;
+        transition-duration: 5s, 1s, 7s;
+      }
+      .rect1:hover {
+        background-color: #076738;
+        width: 300px;
+        height: 200px;
+      }
+      .rect2:hover {
+        background-color: #b40a0a;
+        width: 200px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Transform(변형2)</h2>
+    <div class="rect1 c1">box1</div>
+    <div class="rect1 c2">box2</div>
+    <div class="c3">box3</div>
+  </body>
+</html>
